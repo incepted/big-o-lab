@@ -7,6 +7,13 @@ func insertionSort( var a as array )
                 swap a[j] and a[j-1]
 end func
 
+
+Result:
+O(n^2)
+
+Reason:
+Worst case would have an array that is sorted in reverse order and has a nested for loop.
+
 Merge Sort:
 
 func mergeSort( var a as array )
@@ -40,6 +47,12 @@ func merge( var a as array, var b as array )
      return c
 end func
 
+Result
+O(n log n) 
+
+Reason
+The first method separates the array into half which allows for the second operation to merge back for log n times. 
+
 Selection Sort:
 
 int i,j;
@@ -58,12 +71,19 @@ for (j = 0; j < n-1; j++) {
             /* found new minimum; remember its index */
             iMin = i;
         }
+        
+        
     }
 
     if(iMin != j) {
         swap(a[j], a[iMin]);
     }
 }
+Result
+O(n^2)
+
+Reason
+There are two loops running.
 
 Quick Sort:
 
@@ -86,3 +106,8 @@ func partition(var a as array, var low as int, var high as int){
     swap(a[low], a[leftwall])
 
     return (leftwall)
+    
+    Result:
+    O(n^2)
+    Reason:
+    In worst case scenario, after it calls the partition method that has a for loop(n), the operation from quicksort will keep running until it no longer fulfills the conditional(n). So with both method combined, the operation is O(n^2) as a whole. 
